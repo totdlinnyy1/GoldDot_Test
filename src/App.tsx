@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {FC} from 'react'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom"
+import Home from './pages/Home/Home'
+import Header from './components/Header/Header'
+import {Box, Container} from '@chakra-ui/react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App:FC = () => {
+  return <Router>
+    <Box w='full' bgColor='gray.100'>
+      <Container maxW='container.lg'>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </Container>
+    </Box>
+  </Router>
 }
 
-export default App;
+export default App
