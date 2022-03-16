@@ -7,14 +7,16 @@ import {
 import Home from './pages/Home/Home'
 import Header from './components/Header/Header'
 import {Box, Container} from '@chakra-ui/react'
+import Valute from './pages/Valute/Valute'
 
 const App:FC = () => {
   return <Router>
-    <Box w='full' bgColor='gray.100'>
+    <Box w='full'>
       <Container maxW='container.lg'>
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/:valute' element={<Valute />} />
         </Routes>
       </Container>
     </Box>
